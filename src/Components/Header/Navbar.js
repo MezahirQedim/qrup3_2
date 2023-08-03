@@ -1,7 +1,16 @@
 import React from "react";
 import {Link} from "react-router-dom"
+import { ThemeContext } from "../../App";
+import { useContext } from 'react';
 
 const Navbar = () => {
+
+  const {test, setTest } = useContext(ThemeContext)
+
+  console.log(test)
+
+
+
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -32,6 +41,9 @@ const Navbar = () => {
             <li class="nav-item">
               <Link class="nav-link" to="/users">Users</Link>
             </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/form">Form</Link>
+            </li>
 
           </ul>
           <form class="d-flex" role="search">
@@ -44,6 +56,19 @@ const Navbar = () => {
             <button class="btn btn-outline-success" type="submit">
               Search
             </button>
+
+            <button className="btn btn-success" 
+
+              type="button"
+              onClick={(e) => 
+                 
+                {
+                  // e.preventDefault()
+                  setTest("serdar")}
+                }
+                
+                
+                >Test</button>
           </form>
         </div>
       </div>

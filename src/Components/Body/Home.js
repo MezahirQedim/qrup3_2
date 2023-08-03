@@ -1,8 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { ThemeContext } from '../../App';
 
 const Home = () => {
+
+  const {test} = React.useContext(ThemeContext)
+
+
+
   return (
-    <div>Homehvgfhg</div>
+    <div>
+      {test}
+    </div>
   )
 }
 
