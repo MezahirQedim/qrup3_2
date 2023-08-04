@@ -11,19 +11,51 @@ const Main = () => {
 
 
 
+  const naviqasiya = [
+    {
+      path: "/home",
+      element: <Home/>,
+      name: "Home"
+    },
+    {
+      path: "/service",
+      element: <Service/>,
+      name: "Service"
+    },
+    {
+      path: "/users",
+      element: <Users/>,
+      name: "Users"
+    },
+    {
+      path: "/form",
+      element: <Form/>,
+      name: "Form"
+    },
+  ]
+
+
+
+
 
   return (
     <div>
         {/* Header */}
-        <Navbar/>
+        <Navbar naviqasiya={naviqasiya}/>
 
         {/* Body */}
 
         <Routes>
+            {naviqasiya.map((item) => 
+              <Route path={item.path} element={item.element} />
+            )}
+
+            {/* 
             <Route path='/home' element={<Home/>} />
             <Route path='/service' element={<Service/>} />
             <Route path='/users' element={<Users/>}/>
-            <Route path='/form' element={<Form/>}/>
+            <Route path='/form' element={<Form/>}/> 
+            */}
         </Routes>
 
         

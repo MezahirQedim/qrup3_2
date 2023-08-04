@@ -1,13 +1,14 @@
 import React from "react";
-import {Link} from "react-router-dom"
-import { ThemeContext } from "../../App";
+import {Link, useLocation} from "react-router-dom"
 import { useContext } from 'react';
+import { ThemeContext } from "../Context/ThemeContext";
 
-const Navbar = () => {
+const Navbar = ({naviqasiya}) => {
 
-  const {test, setTest } = useContext(ThemeContext)
+  const { setTest } = useContext(ThemeContext)
 
-  console.log(test)
+
+  const location = useLocation()
 
 
 
@@ -30,7 +31,17 @@ const Navbar = () => {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+
+            {naviqasiya.map((item) => 
+            
+              <li class="nav-item"  style={{backgroundColor: location.pathname === item.path && "red"}}>
+                <Link class="nav-link " to={item.path}>{item.name}</Link>
+              </li>
+            )}
+
+
+
+            {/* <li class="nav-item">
               <Link class="nav-link" to="/home"> Home </Link>
             </li>
 
@@ -43,7 +54,7 @@ const Navbar = () => {
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/form">Form</Link>
-            </li>
+            </li> */}
 
           </ul>
           <form class="d-flex" role="search">

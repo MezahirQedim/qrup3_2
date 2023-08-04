@@ -1,25 +1,21 @@
 import Main from "./Components/Main";
-import { createContext } from "react";
+import ThemeContext from "./Components/Context/ThemeContext";
+
 import React from "react";
 
-export const ThemeContext = createContext()
+
 
 
 function App() {
 
-    const [test, setTest] = React.useState("Mezahirrr")
-
-
-    const data = {
-      test, setTest
-    }
+  
 
 
   return (
     <div>
-      <ThemeContext.Provider  value={data}>
+      <ThemeContext>
         <Main />
-      </ThemeContext.Provider>
+      </ThemeContext>
       
     </div>
   );

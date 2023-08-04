@@ -1,5 +1,8 @@
 import React from 'react';
-import { ThemeContext } from '../../App';
+import { ThemeContext } from '../Context/ThemeContext';
+import Test from './Test';
+
+
 
 const Home = () => {
 
@@ -10,6 +13,9 @@ const Home = () => {
   return (
     <div>
       {test}
+
+
+      {/* <Test> MEzahir Test  <div style={{backgroundColor: "red"}}>kjjjkkjlkjbl</div></Test> */}
     </div>
   )
 }
